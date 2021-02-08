@@ -4,125 +4,212 @@
     box-sizing: border-box;
 }
 body{
-    background: url("images/bg-pattern-top-desktop.svg") 0px 0px no-repeat, url("images/bg-pattern-bottom-desktop.svg") 200px 800px no-repeat;
-    min-width: 375px;
-    /* max-width: 1440px; */
     font-family: Spartan, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow-x: none;
-   
-}
-
-main{
-    width:80%;
-    max-width: 1440px;
+    background: url("images/bg-pattern-top-desktop.svg") 0px 0px no-repeat, url("images/bg-pattern-bottom-desktop.svg") 200px 200px no-repeat;
+    min-width: 375px;
     height: 100%;
-    margin: 10% 0 0 0;
-    display:grid;
-    grid-template-rows: 300px 350px;
-    grid-template-columns: 1fr 1fr; 
+    width: 100%;
+    display: flex;
 }
 
-footer{
-    position: absolute;
-    bottom: 20px;
+main{ 
+    margin: 10% 5%;    
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
+
+
+/*Heading Styles*/
 .heading {
-    grid-column: 1/2;
-    grid-row: 1/2;
-    width: 80%;
+    text-align: center;
+    width: 98%;
     color: hsl(300, 43%, 22%);
 }
-
 .heading h1{
     padding-right: 20;
-    font-size: 3em;
+    font-size: 2rem;
     font-weight: 700; 
 }
 .heading p {
-    font-size: 1em;
+    margin: 10% 0;
+    font-size: .9em;
     font-weight: 400;
     line-height: 2em;
 }
+
+
+
+/*Ratings Styles*/
 .rating_panel {
-    grid-column: 2/3;
-    grid-row:1/2;
-    height: 300px;
+    width: 100%;
     display: flex;
     flex-direction: column;
+    justify-content: center;
 }
 .rating {
-    font-size: 0.9em;
+    font-size: 1em;
     background-color: hsl(300, 24%, 96%);
-    width:70%;
-    margin: 10px;
-    padding: 20px;
+    margin: 10px 0;
+    padding: 15px;
     border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.stars{
+    justify-content: space-around;
+    text-align: center;
 }
 .rating span{
-    margin-left: 10px;
-}
-.rating:nth-of-type(2){
-    align-self: center;
-}
-.rating:nth-of-type(3){
-    align-self: flex-end;
-}
-.reviews_panel {
-    grid-column: 1/3;
-    grid-row: 2/3;
-    height: 100%;
-    /* margin-top: 20px; */
-    display: flex;
-    justify-content: space-between;
+    display: block;
+    font-weight: 700;
+    color:hsl(300, 43%, 22%);
+    padding-top: 0.5em;
 }
 
+
+
+/*Reviews Styles*/
+.reviews_panel {
+    margin: 50px 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
 .reviews{
-    width: 32%;
-    height: 80%;
+    margin: 5% 0;
     padding: 40px 30px;  
     background-color:hsl(300, 43%, 22%);
     border-radius: 10px;
     color: white  ;
-    font-size: 0.9em; 
-}
-
-.reviews:nth-of-type(2){
-    align-self: center;
-}
-.reviews:nth-of-type(3){
-    align-self: flex-end;
+    font-size: 0.8em; 
 }
 .reviews img{
     border-radius: 50%;
-    width:40px;
+    width:50px;
 }
-
 .reviews div{
     position: relative;
-    top: -40px;
+    top: -50px;
     left:60px;   
 }
-
 .reviews div + p{   
     line-height: 2em;
     font-weight: 400;
 }
-
+.name{
+    font-size: 1em;
+}
 .status{
-    margin-top: 2px;
+    font-weight: 400;
+    margin-top: 10px;
     color:hsl(333, 80%, 67%);
 }
 
 
-.attribution {
-    font-size: 11px;
-    text-align: center;
-  }
-  .attribution a {
-    color: hsl(228, 45%, 44%);
-  }
 
+  /*STYLES FOR 1000PX  STYLES FOR 1000PX */
+  /*STYLES FOR 1000PX  STYLES FOR 1000PX */
+  /*STYLES FOR 1000PX  STYLES FOR 1000PX */
+@media (min-width:1000px) {
+    body{
+        height: 100vh;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    main{
+        width:80%;
+        margin-right: 0;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+    }
+
+    .heading{
+        grid-column: 1/2;
+        grid-row: 1/2;
+        width: 80%;
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .heading h1{
+        padding-right: 20;
+        font-size: 3em;
+    }
+
+    .heading p {
+        margin: 0;
+        font-size: 1em;
+    }
+
+
+
+
+    /*Styling the reviews ratings @media(1000px)*/
+    .rating_panel{
+        grid-column: 2/3;
+        grid-row:1/2;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .rating{
+        flex-direction: row;
+        align-items: flex-end;
+        width: 80%;
+    }
+
+    .rating span{
+        display: inline;
+        margin-left: 10px;
+    }
+
+    .rating:nth-of-type(2){
+        align-self: center;
+    }
+    .rating:nth-of-type(3){
+        align-self: flex-end;
+    }
+
+
+
+    
+    /*Styling the reviews @media(1000px)*/
+    .reviews_panel{
+        margin:0;
+        flex-direction: row;
+        grid-column: 1/3;
+        grid-row: 2/3;
+    }
+
+    .reviews{
+        width: 32%;
+        margin: 0;
+        height: 80%;
+    }
+
+    .reviews div + p{   
+       font-size: 1.1em;
+    }
+
+    .reviews:nth-of-type(1){
+        align-self: flex-start;
+    }
+    .reviews:nth-of-type(2){
+        align-self: center;
+    }
+    .reviews:nth-of-type(3){
+        align-self: flex-end;
+    }
+
+    
+}/*STYLES FOR 1000PX ENDS HERE*/
